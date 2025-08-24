@@ -20,12 +20,12 @@ list the stations avaialble
 
 find me the nerest station for charging
 
-can u calculate the price for charging with 0.005 wh and 1 power
+can u calculate the price for charging with 0.005 wh and 1 power for station 1
 
-what is the charging capacity of the station 0
+what is the charging capacity of the station 1
 
-can u calculate the charing time for station 0 for 0.005 watt hour and 1 power
+can u calculate the charing time for station 1 for 0.005 watt hour and 1 power
 
-can u buy the power from station 0 for 0.005 watt and 1 power , here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f
+can u buy the power from station 1 for 0.005 watt and 1 power , here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f
 
 stop the charing, here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f

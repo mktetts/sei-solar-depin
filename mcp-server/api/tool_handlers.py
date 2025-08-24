@@ -221,7 +221,7 @@ async def call_registered_tool(tool_name: str, **kwargs) -> Dict[str, Any]:
                         # Make HTTP GET request to start charging
                         try:
                             async with httpx.AsyncClient(timeout=10.0) as client:
-                                http_response = await client.get(toggle_url)
+                                http_response = await client.get(toggle_url, headers={"ngrok-skip-browser-warning": "true"})
                                 
                             http_result = {
                                 "device_communication": "success",
@@ -463,7 +463,7 @@ async def call_registered_tool(tool_name: str, **kwargs) -> Dict[str, Any]:
                     
                     try:
                         async with httpx.AsyncClient(timeout=10.0) as client:
-                            stop_response = await client.get(stop_url)
+                            stop_response = await client.get(stop_url, headers={"ngrok-skip-browser-warning": "true"})
                         
                         device_response = {
                             "device_communication": "success",
@@ -588,7 +588,7 @@ async def call_registered_tool(tool_name: str, **kwargs) -> Dict[str, Any]:
             # Make HTTP GET request to the battery endpoint
             try:
                 async with httpx.AsyncClient(timeout=10.0) as client:
-                    battery_response = await client.get(battery_url)
+                    battery_response = await client.get(battery_url, headers={"ngrok-skip-browser-warning": "true"})
                 
                 if battery_response.status_code == 200:
                     try:
@@ -765,7 +765,7 @@ async def call_registered_tool(tool_name: str, **kwargs) -> Dict[str, Any]:
             # Make HTTP GET request to the estimate endpoint
             try:
                 async with httpx.AsyncClient(timeout=10.0) as client:
-                    estimate_response = await client.get(estimate_url)
+                    estimate_response = await client.get(estimate_url, headers={"ngrok-skip-browser-warning": "true"})
                 
                 if estimate_response.status_code == 200:
                     estimate_text = estimate_response.text
