@@ -1,0 +1,31 @@
+curl http://192.168.100.100:5000/new_secret
+
+
+curl http://192.168.100.100:5000/toggle/0.005/0.5 \
+  -H "X-Secret: UXOVLSW_DO[OJXDN"
+
+curl http://192.168.100.100:5000/stop \
+  -H "X-Secret: UXOVLSW_DO[OJXDN"
+
+
+curl http://192.168.100.100:5000/estimate/0.005/0.5 \
+  -H "X-Secret: UXOVLSW_DO[OJXDN"
+
+
+
+
+what is my balance, here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f
+
+list the stations avaialble
+
+find me the nerest station for charging
+
+can u calculate the price for charging with 0.005 wh and 1 power
+
+what is the charging capacity of the station 0
+
+can u calculate the charing time for station 0 for 0.005 watt hour and 1 power
+
+can u buy the power from station 0 for 0.005 watt and 1 power , here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f
+
+stop the charing, here is my address 0xd499063b66E9922D5918717c857B8BbA5F9daB8f

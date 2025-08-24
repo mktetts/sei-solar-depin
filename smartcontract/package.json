@@ -1,0 +1,25 @@
+{
+  "name": "hardhat-project",
+  "type": "commonjs",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test --bail",
+    "clean": "find . -type d -name 'artifacts' -exec rm -rf {} + -o -type d -name 'cache' -exec rm -rf {} +",
+    "deploy:local": "npx hardhat run ./scripts/deploy.js --network hardhat",
+    "deploy:testnet": "npx hardhat run ./scripts/deploy.js --network testnet",
+    "deploy:mainnet": "npx hardhat run ./scripts/deploy-production.js --network mainnet",
+    "deploy:dev": "npx hardhat run ./scripts/deploy.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "axios": "^1.11.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-import": "^2.32.0",
+    "hardhat": "^2.26.1",
+    "nock": "^14.0.10"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.1"
+  }
+}

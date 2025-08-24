@@ -1,0 +1,506 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_userWalletContract",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldPower",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPower",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldPrice",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "PowerUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldPrice",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "PriceUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "stationUniqueId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "stationURL",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "pricePerWatt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "power",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "physicalAddress",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      }
+    ],
+    "name": "StationRegistered",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "getAllStations",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "stationIds",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "stationUniqueIds",
+        "type": "string[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "stationURLs",
+        "type": "string[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "pricesPerWatt",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "powers",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "owners",
+        "type": "address[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "physicalAddresses",
+        "type": "string[]"
+      },
+      {
+        "internalType": "int256[]",
+        "name": "latitudes",
+        "type": "int256[]"
+      },
+      {
+        "internalType": "int256[]",
+        "name": "longitudes",
+        "type": "int256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStation",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "stationUniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "stationURL",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "pricePerWatt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "power",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "physicalAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStationLocation",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "physicalAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStationOwner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStationPower",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStationPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStationURL",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "stationUniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "stationURL",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "pricePerWatt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "power",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "physicalAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      }
+    ],
+    "name": "registerStation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "stationCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "stations",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "stationUniqueId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "stationURL",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "pricePerWatt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "power",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "exists",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "physicalAddress",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "latitude",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "longitude",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "newPower",
+        "type": "uint256"
+      }
+    ],
+    "name": "updatePower",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "stationId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "newPricePerWatt",
+        "type": "uint256"
+      }
+    ],
+    "name": "updatePrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "userWalletContract",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
